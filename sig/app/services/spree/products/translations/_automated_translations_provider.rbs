@@ -1,0 +1,9 @@
+module Spree
+  module Products
+    module Translations
+      interface _AutomatedTranslationsProvider
+        def call: (product: Spree::Product, source_attributes: Hash[Symbol, String], source_locale: String, target_locale: String) -> Hash[Symbol, String]
+      end
+    end
+  end
+end

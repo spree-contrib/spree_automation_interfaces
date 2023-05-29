@@ -1,0 +1,6 @@
+module SpreeAutomationInterfaces
+  class AutomationInterfacesDependencies
+    attr_reader products_generate_automated_translations: Spree::Products::Translations::_GenerateAutomatedTranslations
+    attr_reader products_automated_translations_provider: Spree::Products::Translations::_AutomatedTranslationsProvider
+  end
+end

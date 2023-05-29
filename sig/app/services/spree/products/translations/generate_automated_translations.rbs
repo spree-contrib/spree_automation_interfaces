@@ -1,0 +1,23 @@
+module Spree
+  module Products
+    module Translations
+      class GenerateAutomatedTranslations
+        include _GenerateAutomatedTranslations
+
+        private
+
+        attr_reader automated_translations_provider: _AutomatedTranslationsProvider
+
+        def fetch_attributes_in_source_locale: (Spree::Product product, String source_locale) -> Hash[Symbol, String]
+
+        def translate_to_locale: (Spree::Product product, Hash[Symbol, String] source_attributes, String source_locale, String target_locale) -> bool
+
+        def translations_to_generate: (Spree::Product product, Array[String] target_locales, bool skip_existing) -> Array[String]
+
+        def self.default_provider_configured?: () -> bool
+
+        def self.injected_automated_translations_provider: () -> _AutomatedTranslationsProvider
+      end
+    end
+  end
+end
