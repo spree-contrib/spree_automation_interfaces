@@ -37,7 +37,7 @@ describe 'API V2 Platform Products Automation Interfaces Spec', type: :request d
 
       context 'when generating automated translations succeeds' do
         before do
-          expect(translations_provider).to receive(:call).with(product: product, source_attributes: anything, source_locale: 'en', target_locale: 'fr').and_return({ name: 'FR Name' })
+          expect(translations_provider).to receive(:call).with(source_attributes: anything, source_locale: 'en', target_locale: 'fr').and_return({ name: 'FR Name' })
           subject
         end
 
@@ -50,7 +50,7 @@ describe 'API V2 Platform Products Automation Interfaces Spec', type: :request d
 
       context 'when generating automated translations fails' do
         before do
-          expect(translations_provider).to receive(:call).with(product: product, source_attributes: anything, source_locale: 'en', target_locale: 'fr').and_raise('Test error')
+          expect(translations_provider).to receive(:call).with(source_attributes: anything, source_locale: 'en', target_locale: 'fr').and_raise('Test error')
           subject
         end
 

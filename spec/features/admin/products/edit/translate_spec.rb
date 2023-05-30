@@ -34,7 +34,7 @@ describe 'Product Automated Translations', type: :feature, js: true do
 
       context 'when generating automated translations succeeds' do
         before do
-          expect(translations_provider).to receive(:call).with(product: product, source_attributes: anything, source_locale: 'en', target_locale: 'fr').and_return({ name: new_translation })
+          expect(translations_provider).to receive(:call).with(source_attributes: anything, source_locale: 'en', target_locale: 'fr').and_return({ name: new_translation })
         end
 
         let(:new_translation) { 'This is a test French translation' }
@@ -57,7 +57,7 @@ describe 'Product Automated Translations', type: :feature, js: true do
 
       context 'when generating automated translations fails' do
         before do
-          expect(translations_provider).to receive(:call).with(product: product, source_attributes: anything, source_locale: 'en', target_locale: 'fr').and_raise('Test error')
+          expect(translations_provider).to receive(:call).with(source_attributes: anything, source_locale: 'en', target_locale: 'fr').and_raise('Test error')
         end
 
         it 'shows an error' do
