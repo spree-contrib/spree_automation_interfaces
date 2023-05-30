@@ -1,0 +1,11 @@
+module Spree
+  module Products
+    module Translations
+      interface _GenerateAutomatedTranslations
+        def initialize: (?provider: _AutomatedTranslationsProvider) -> void
+
+        def call: (product: Spree::Product, source_locale: String, target_locales: Array[String], ?skip_existing: bool) -> true
+      end
+    end
+  end
+end
