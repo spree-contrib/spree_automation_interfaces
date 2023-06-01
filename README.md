@@ -12,7 +12,7 @@ Spree Automation Interfaces is a gem that extends the functionality of the Spree
 1. Add this extension to your Gemfile with this line:
 
     ```ruby
-    gem 'spree_automation_interfaces'
+    gem 'spree_automation_interfaces', github: 'spree-contrib/spree_automation_interfaces'
     ```
 
 2. Install the gem using Bundler
